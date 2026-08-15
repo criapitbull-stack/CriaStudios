@@ -85,5 +85,15 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Fallback para detectar problemas no carregamento
+      setTimeout(function() {
+        if (!document.getElementById('root').hasChildNodes()) {
+          console.error('React app failed to load');
+          document.getElementById('root').innerHTML = '<div style="padding: 20px; text-align: center;"><h1>Loading Error</h1><p>The application failed to load. Please refresh the page.</p></div>';
+        }
+      }, 5000);
+    </script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
   </body>
 </html>

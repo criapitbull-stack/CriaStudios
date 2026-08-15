@@ -13,7 +13,9 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  base: './',
   build: {
+    target: 'es2015',
     rollupOptions: {
       output: {
         manualChunks: undefined,
